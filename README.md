@@ -4,22 +4,6 @@ Para reter a execução do scan DynamoDB usando o Node.js até que ele seja conc
 
 Aqui está um exemplo de como usar a função promise() para executar uma operação de scan no DynamoDB e aguardar sua conclusão antes de prosseguir com o código:
 
-const AWS = require('aws-sdk');
-
-const docClient = new AWS.DynamoDB.DocumentClient();
-
-const params = {
-  TableName: 'nome_da_tabela',
-};
-
-docClient.scan(params).promise()
-  .then((data) => {
-    console.log(data);
-    // Continua com a execução do código aqui
-  })
-  .catch((err) => {
-    console.log(err);
-    // Trata o erro aqui
-  });
+(node.png)
 
 No exemplo acima, o scan() é executado no DynamoDB e a função promise() é usada para aguardar sua conclusão. Quando a operação é concluída com sucesso, o resultado é retornado na função then(), e você pode continuar com a execução do código. Se ocorrer um erro durante a operação, ele será retornado na função catch() e você poderá tratá-lo adequadamente.
